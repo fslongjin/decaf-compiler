@@ -2,15 +2,6 @@ use std::string::ToString;
 
 use super::{number::{Number, Real}, tag::Tag};
 
-#[derive(Debug, Clone, Copy)]
-pub enum TokenType {
-    Number,
-    Operator,
-    String,
-    Word,
-    Real,
-    EOF,
-}
 #[derive(Debug, Clone)]
 pub struct Token {
     pub tag: Option<i32>,
@@ -55,7 +46,7 @@ impl Token {
             lexme: None,
         })
     }
-    pub fn new_EOF()->Box<Token>{
+    pub fn new_eof()->Box<Token>{
         Box::new(Token{
             tag: Some(Tag::EOF as i32),
             number: None,
