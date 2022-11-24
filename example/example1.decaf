@@ -1,0 +1,15 @@
+class Main {
+  static void main(){
+    class Fibonacci f = new Fibonacci();
+    Print(f.get(ReadInteger()));
+  }
+}
+
+class Fibonacci {
+  int get(int i){
+    if(i<2){
+      return 1;
+    }
+    return get(i-1) + get(i-2);
+  }
+}
